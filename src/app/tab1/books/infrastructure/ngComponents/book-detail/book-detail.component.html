@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Book Detail
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<div class="book-cell">
+  <div class="book-img">
+   <img src={{book.imageLink}} alt="" class="book-photo">
+  </div>
+  <div class="book-content">
+   <div class="book-title">{{book.title}}</div>
+   <div class="book-author"> by {{book.author.name}} {{book.author.surname}}</div>
+   <div class="book-state">State: 
+        <div class="circle-content">
+              <div class="circle" style="--tooltip-color: red;"></div>
+        </div> 
+  </div>
+   <div class="book-sum"><ion-icon name="location-outline"></ion-icon>
+    {{book.location.building}} {{book.location.floor}} floor shelving {{book.location.shelving}}, {{book.location.city}} </div>
+   <div class="book-see">Book Now</div>
+  </div>
+ </div>
+
+<div class="introduction">
+  <p>Introduction:</p>
+ <p>{{book.description}}</p> 
+</div>
+</ion-content>

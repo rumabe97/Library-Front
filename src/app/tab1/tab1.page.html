@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Books
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<div class="book-cell" *ngFor="let book of books">
+  <div class="book-img">
+   <img src={{book.imageLink}} alt="" class="book-photo">
+   <div class="book-see" (click)="generateBarCode(book)">Create QR</div>
+  </div>
+  <div class="book-content">
+   <div class="book-title">{{book.title}}</div>
+   <div class="book-author"> by {{book.author.name}} {{book.author.surname}}</div>
+   <div class="book-sum">{{book.description}} </div>
+   <div class="book-editorial">Editorial: {{book.editorial.name}}</div>
+   <div class="book-sum"><ion-icon name="location-outline"></ion-icon>
+    {{book.location.building}} {{book.location.floor}} floor shelving {{book.location.shelving}}, {{book.location.city}} </div>
+   <!--<div class="book-see" (click)="goToBookDetail(book)">See The Book</div>-->
+  </div>
+ </div>
+</ion-content>

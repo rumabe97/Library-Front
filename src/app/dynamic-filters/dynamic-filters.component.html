@@ -1,0 +1,34 @@
+<form [formGroup]="form" *ngIf="showFilters" class="filters scrollbar-style">
+  <ion-content *ngFor="let item of filters">
+     <!-- <app-autocomplete *ngIf="showAutocomplete(item)"
+                        class="filter"
+                        [placeholder]="item.placeholder"
+                        [matLabel]="item.label"
+                        [appearance]="'standard'"
+                        [defaultValue]="item.value"
+                        [options]="item.options"
+                        (selectedValue)="setAutocompleteValue({formFilter: item.searchValue, value: $event, type: 'autocomplete'})">
+      </app-autocomplete>
+
+      <app-autoselect *ngIf="showAutoSelect(item)"
+                      class="filter"
+                      [config]="this.buildFilter(item)"
+                      (search)="search.emit({searchValue: item.searchValue, value: $event})"
+                      (selectedValue)="selectedItem({searchValue: item.searchValue, value: $event, type: 'autoselect'})"
+                      (cleared)="clear({formFilter: item.searchValue})">
+      </app-autoselect>-->
+
+      <div *ngIf="showInput(item)" class="filter" appearance="{{'standard'}}">
+          <ion-label>{{item.label}}</ion-label>
+          <ion-input 
+                 [id]="item.label"
+                 aria-label="input"
+                 [placeholder]="item.placeholder"
+                 [formControlName]="item.prop"
+                 (keyup)="setInputValue({formFilter: item.prop, value: $event, type: 'input'})">
+          <button mat-icon-button matSuffix *ngIf="hasValue(item.prop)" (click)="clear({formFilter: item.prop})" matTooltip="clear"></button>
+              <ion-icon>clear</ion-icon>
+          </ion-input>
+        </div>
+  </ion-content>
+</form>

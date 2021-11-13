@@ -1,0 +1,233 @@
+/* ===== FONTS (Major Third) ===== */
+$small: 0.8rem;
+$medium: 1rem;
+$large: 1.25rem;
+$extra-large: 1.563rem;
+$huge: 1.953rem;
+$extra-huge: 2.441rem;
+
+/* ===== PALETTE ===== */
+$color-palette-1-main: #DE7373;
+$color-palette-1-second: #ABABFF;
+$color-primary-light: #EFEFEF;
+$color-primary-dark: #191919;
+$color-secondary-dark: #333333;
+$color-scrollbar-thumb: #8C8C8C;
+
+/* ===== WEIGHT ===== */
+
+
+/* ===== TEMPLATE 1 ===== */
+
+.c-card-component {
+  margin: 3.5rem 1.5em 0 1.5rem;
+
+  .title-component {
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+    h2 {
+      font-size: $extra-large;
+      font-weight: 500;
+      margin: 0.5rem;
+    }
+  }
+}
+
+
+.filters-plus-config {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .dyn-filters {
+    flex-grow: 1;
+    overflow-x: auto;
+    margin: 0 40px 0 0;
+
+    ::ng-deep mat-form-field {
+      width: 150px;
+    }
+  }
+  .configButton {
+    margin-bottom: 10px;
+    flex-shrink: 0;
+  }
+}
+
+.card-component {
+  margin: 3.5rem 1.5em 0 1.5rem;
+  max-height: 88%;
+
+  .card-content, .title-component {
+    margin: 0;
+  }
+
+  ::ng-deep mat-tab-group mat-tab-header {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .title-component {
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+    h2 {
+      font-size: $extra-large;
+      font-weight: 500;
+      margin: 0.5rem;
+    }
+
+    button {
+      background-color: $color-palette-1-main;
+      border-radius: 2rem;
+      height: 2.3rem;
+      color: #efefef;
+    }
+  }
+}
+
+::ng-deep .mat-select-value {
+  color: $color-primary-dark;
+}
+
+.filter {
+  align-items: center;
+  margin-left: 0.5em;
+  margin-bottom: 20px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+mat-form-field mat-select {
+  max-width: 10em;
+  margin-right: 5em;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  // max-height: 800px;
+  .mat-table {
+    width: 100%;
+    max-width: 100%;
+    display: table;
+  }
+}
+
+.scrollbar-style::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.scrollbar-style::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 14px;
+}
+
+.table-responsive::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 14px;
+}
+
+.mat-header-row {
+  background-color: black;
+  border-radius: 0.5rem;
+  color: #8b8b8b;
+}
+
+.idCell:first-of-type, .idHeader:first-of-type {
+  padding-left: 0;
+}
+
+.idHeader {
+  justify-content: center;
+  color: white;
+}
+
+.idCell {
+  text-align: center;
+  justify-content: center;
+  word-break: break-all;
+  margin-right: 10px;
+}
+
+
+
+
+
+mat-card-content {
+  margin: 0 34px;
+}
+
+/* ===== PRIORITY ===== */
+
+.priority {
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-weight: 500;
+  text-transform: capitalize;
+  background-color: #c2c2c2;
+}
+
+// @TODO: change color to variables
+
+.priority-muyalta {
+  background-color: #d84855;
+}
+
+.priority-alta {
+  background-color: #e97171;
+}
+
+.priority-normal {
+  background-color: #ffcb8e;
+}
+
+.priority-baja {
+  background-color: #a3d69d;
+}
+
+.priority-ninguna {
+  background-color: #c2c2c2;
+}
+
+.red-date {
+  color: #eb4141;
+}
+
+/* MAT TAB */
+
+::ng-deep mat-tab-group {
+  margin-left: 20px;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: black;
+}
+
+::ng-deep .mat-tab-label .mat-tab-label-content {
+  font-size: 13px;
+}
+
+::ng-deep .mat-tab-label-content span {
+  margin-right: 5px;
+}
+
+::ng-deep .mat-tab-header {
+  border-bottom: 0 solid rgba(0, 0, 0, .12);
+}

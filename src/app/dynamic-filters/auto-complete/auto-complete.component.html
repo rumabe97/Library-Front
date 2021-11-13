@@ -1,0 +1,21 @@
+<form [formGroup]="form">
+  <mat-form-field class="{{filterField}}" appearance="{{appearance}}">
+      <mat-label>{{matLabel}}</mat-label>
+      <input type="text"
+             placeholder="{{placeholder}}"
+             aria-label="label"
+             matInput
+             formControlName="input"
+             [matAutocomplete]="auto" (keyup)="emptySelection($event)">
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="setValue($event.option.value)">
+          <mat-option *ngFor="let option of filteredOptions | async"
+                      [value]="option" [matTooltip]="option" matTooltipPosition="after">
+              {{option}}
+          </mat-option>
+      </mat-autocomplete>
+      <mat-icon *ngIf="icon" matSuffix matTooltip="{{icon.matToolTip}}" style="{{icon.style}}" (click)="iconClicked.emit()">{{icon.icon}}</mat-icon>
+      <button mat-icon-button matSuffix *ngIf="form.controls['input'].value && !icon" (click)="clear()" matTooltip="clear">
+          <mat-icon>clear</mat-icon>
+      </button>
+  </mat-form-field>
+</form>

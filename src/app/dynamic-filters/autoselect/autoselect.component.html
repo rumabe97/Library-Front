@@ -1,0 +1,17 @@
+<mat-form-field [class]="config.class" [appearance]="config.appearance">
+  <mat-label>{{config.label}}</mat-label>
+  <input #input type="text"
+         [placeholder]="config.placeholder" aria-label="label" matInput
+         [formControl]="form"
+         [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedItem($event)">
+      <mat-option *ngFor="let option of config.options" [value]="option"
+                  [matTooltip]="option[shownField]" matTooltipPosition="after">
+          {{option[shownField]}}
+      </mat-option>
+  </mat-autocomplete>
+  <button mat-icon-button matSuffix *ngIf="form.value && !searching" (click)="clearAutoselect()" matTooltip="clear">
+      <mat-icon>clear</mat-icon>
+  </button>
+  <mat-spinner diameter="20" matSuffix *ngIf="searching"></mat-spinner>
+</mat-form-field>

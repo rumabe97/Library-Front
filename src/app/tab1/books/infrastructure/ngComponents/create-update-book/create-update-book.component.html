@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Book management
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card class="content">
+  <form class="content__form" [formGroup]="form">
+    <input class="content__input" placeholder="title" formControlName="title">
+    <input class="content__input" placeholder="ISBN" formControlName="isbn">
+    <input class="content__input"placeholder="country" formControlName="country">
+    
+    <input class="content__input"placeholder="description" formControlName="description">
+
+    <input class="content__input"list="editorials"  placeholder="Editorial" formControlName="editorial">
+    <datalist id="editorials">
+        <option *ngFor="let editorial of _resolved.data.editorial.content">{{editorial.name}}</option>
+    </datalist>
+
+    <input class="content__input" list="locations"  placeholder="Location" formControlName="location">
+    <datalist id="locations">
+        <option *ngFor="let location of _resolved.data.location.content">{{location.building}} {{location.floor}} floor shelving {{location.shelving}}, {{location.city}}</option>
+    </datalist>
+
+    <input class="content__input" list="authors"  placeholder="Author" formControlName="author">
+    <datalist id="authors">
+      <option *ngFor="let author of _resolved.data.author.content">{{author.name}} {{author.surname}}</option>
+    </datalist>
+
+    <input class="content__input" placeholder="Type" formControlName="type">
+    <input class="content__input" placeholder="Image" formControlName="imageLink">
+    <button class="content__button" (click)="onSubmit()">Save</button>
+  </form>
+</ion-card>

@@ -1,0 +1,22 @@
+@import '../../theme/staffit-style-1.scss';
+
+.filters {
+    display: flex;
+    margin-bottom: 0.5rem;
+    margin-left: 0.75rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.filter {
+    max-width: 10rem;
+    margin: 0.5rem;
+}
+
+:host ::ng-deep .mat-form-field-label {
+    font-size: $small;
+}
+
+:host ::ng-deep .mat-input-element {
+    font-size: $small;
+}
